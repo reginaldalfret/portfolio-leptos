@@ -1,4 +1,4 @@
-use leptos::prelude::*;
+﻿use leptos::prelude::*;
 
 #[derive(Clone, Copy, PartialEq, Eq)]
 enum ViewMode {
@@ -179,6 +179,7 @@ const STACKS: &[StackItem] = &[
     StackItem { name: "Blazor", href: "/stacks/blazor", badge: "Live WASM", icon: "🟣", desc: "Blazor WebAssembly · .NET 8 · C#", is_active: false },
     StackItem { name: "Buffalo", href: "/stacks/buffalo", badge: "Live Go", icon: "🦬", desc: "Go Buffalo · Go 1.27 · Plush SSR", is_active: false },
     StackItem { name: "Leptos", href: "/stacks/leptos", badge: "Active (Rust)", icon: "🦀", desc: "Leptos 0.7 · Rust WebAssembly · CSR", is_active: true },
+    StackItem { name: "Jaspr", href: "/stacks/jaspr", badge: "Live Dart", icon: "🎯", desc: "Dart 3.13 · Jaspr 0.23 · SSR Hydration", is_active: false },
 ];
 
 #[component]
@@ -631,6 +632,9 @@ fn App() -> impl IntoView {
                         <span class="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse"></span>
                         "Leptos"
                     </span>
+                    <a href="/stacks/jaspr" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium" title="Switch to Jaspr (Dart SSR & Hydration)">
+                        <span>"Jaspr"</span>
+                    </a>
                 </div>
             </div>
         </div>

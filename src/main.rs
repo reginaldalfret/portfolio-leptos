@@ -635,6 +635,9 @@ fn App() -> impl IntoView {
                     <a href="/stacks/jaspr" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium" title="Switch to Jaspr (Dart SSR & Hydration)">
                         <span>"Jaspr"</span>
                     </a>
+                    <a href="/stacks/vapor" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium" title="Switch to Vapor (Swift 6.0)">
+                        <span>"Vapor"</span>
+                    </a>
                 </div>
             </div>
         </div>

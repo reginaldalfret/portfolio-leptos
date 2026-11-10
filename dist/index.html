@@ -66,21 +66,48 @@
     </style>
 
     
-<script type="module">
-import init, * as bindings from '/portfolio-leptos-707dbf2c102f1def.js';
-const wasm = await init({ module_or_path: '/portfolio-leptos-2e81afb124cab55e_bg.wasm' });
+    <link rel="modulepreload" href="/stacks/leptos/portfolio-leptos-707dbf2c102f1def.js" />
+    <link rel="preload" href="/stacks/leptos/portfolio-leptos-2e81afb124cab55e_bg.wasm" as="fetch" type="application/wasm" crossorigin="anonymous" />
 
-
-window.wasmBindings = bindings;
-
-
-dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
-
-</script>
-    
-    
-  <link rel="modulepreload" href="/portfolio-leptos-707dbf2c102f1def.js" crossorigin="anonymous" integrity="sha384-vS2SlA8GYwSMAkRrRSPl7sXGwdKbFfkzjGe7hD9klmFeDdwxDB8s+LJ91hs26EG1"><link rel="preload" href="/portfolio-leptos-2e81afb124cab55e_bg.wasm" crossorigin="anonymous" integrity="sha384-b2aIErJlWhfsaTUeWKamSDWqUkA3GQbW0U0lmCNkHq+E7awVaIXPvem3Xpx4z4vU" as="fetch" type="application/wasm"></head>
+    <script type="module">
+      import init, * as bindings from '/stacks/leptos/portfolio-leptos-707dbf2c102f1def.js';
+      try {
+        const wasm = await init({ module_or_path: '/stacks/leptos/portfolio-leptos-2e81afb124cab55e_bg.wasm' });
+        window.wasmBindings = bindings;
+        window.dispatchEvent(new CustomEvent("TrunkApplicationStarted", { detail: { wasm } }));
+      } catch (err) {
+        console.error("Error initializing Leptos WASM:", err);
+      }
+    </script>
+  </head>
   <body class="bg-[#050505] text-neutral-100 min-h-screen selection:bg-orange-500/20 selection:text-orange-200">
+
+<!-- ========================================================================= -->
+<!-- 12 STACKS. 1 PRODUCT. ECOSYSTEM CONTEXT BANNER                            -->
+<!-- ========================================================================= -->
+<header class="w-full bg-neutral-950/95 border-b border-white/10 px-4 py-2.5 backdrop-blur-md sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+      <span class="text-neutral-400">PART OF THE <strong class="text-white">12 STACKS. 1 PRODUCT.</strong> EXPERIMENT</span>
+      <span class="hidden sm:inline text-neutral-600">|</span>
+      <span class="hidden sm:inline px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
+        Current Implementation: <strong class="text-white">Leptos 0.7</strong>
+      </span>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="https://reginaldalfret.tech" class="text-neutral-400 hover:text-white transition-colors flex items-center gap-1">
+        <span>← Personal Portfolio</span>
+      </a>
+      <span class="text-neutral-600">·</span>
+      <a href="https://reginaldalfret.tech/lab" class="text-cyan-400 hover:text-cyan-300 transition-colors font-semibold flex items-center gap-1">
+        <span>⚡ Back to Engineering Lab</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+
     <div id="app"></div>
   </body>
 </html>
